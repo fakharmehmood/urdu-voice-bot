@@ -4,7 +4,7 @@ from edge_tts import Communicate
 import os
 
 # Page configurations
-st.set_page_config(page_title="Dolat Nagar Ai Voice Studio", page_icon="🎙️", layout="centered")
+st.set_page_config(page_title="Ai Voice Studio", page_icon="🎙️", layout="centered")
 
 # --- INITIALIZE SESSION STATES ---
 if "words_used" not in st.session_state:
