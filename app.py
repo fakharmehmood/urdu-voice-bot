@@ -109,6 +109,12 @@ else:
         st.info(f"📋 Total Allowed Words: {user_data['total_allowed']}")
         st.success(f"📈 Used Words: {user_data['words_used']}")
         
+        # --- CANVA PREMIUM BONUS FOR PLAN 6 & PLAN 7 ONLY ---
+        if user_data['plan'] in ["Plan 6", "Plan 7", "VIP Owner"]:
+            st.write("---")
+            st.markdown("### 🎉 Congratulations! Your Premium Canva Pro Link:")
+            st.markdown("[Free Canva pro link ⬇️](https://www.canva.com/brand/join?token=TQaHL8JHB4hQhQhfb2to7A&brandingVariant=edu&referrer=team-invite)")
+        
         st.write("---")
         st.subheader("Hi Dolat Nagar e Services, welcome to AI TOOLS FLOW")
         st.markdown("""
@@ -202,9 +208,11 @@ else:
     user_text = st.text_area("Apna Text Yahan Likhain ya Bolain:", placeholder=text_placeholder, height=150)
     voice_name = st.selectbox("Aawaz (Voice Character):", list(voice_options.keys()))
     
-    # Speed & Pitch options block
-    speed_val = st.slider("Speed Control", 0.5, 2.0, 1.0, 0.1)
-    pitch_val = st.slider("Pitch Control (Hz)", -20, 20, 0, 1)
+    # --- VOICE CHANGER OPTIONS BLOCK ---
+    st.write("---")
+    st.subheader("🎛️ Voice Changer Controls")
+    speed_val = st.slider("Speed Control (Tezi)", 0.5, 2.0, 1.0, 0.1)
+    pitch_val = st.slider("Pitch Control (Aawaz Bhari ya Bareek - Hz)", -20, 20, 0, 1)
     
     speed_string = f"{'+' if speed_val >= 1.0 else ''}{int((speed_val-1)*100)}%"
     pitch_string = f"{'+' if pitch_val >= 0 else ''}{pitch_val}Hz"
